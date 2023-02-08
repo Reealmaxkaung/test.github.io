@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Btn Animation</title>
+	<style type="text/css">
+		.container{
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 100vh;
+		}
+		.btn{
+			height: 250px;
+			width: 250px;
+			border-radius: 75px;
+			position: relative;
+			background-color: white;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			/*border: 1px solid black;*/
+			letter-spacing: 2px;
+			transition: 1s box-shadow;
+		}
+		.btn:hover{
+			box-shadow: 0 5px 35px rgba(95, 138, 228, 1);
+		}
+		.btn:hover:before{
+			display:block;
+			content: '';
+			position: absolute;
+			width: 250px;
+			height: 250px;
+			background: blueviolet;
+			border-radius: 75px;
+			z-index: -1;
+			animation: clockwise 1s infinite;
+		}
+		@keyframes clockwise{
+			0%{
+				top: -5px;
+				left: 0;
+			}
+			12%{
+				top: -2px;
+				left: 2px;
+			}
+			25%{
+				top: 0px;
+				left: 5px;
+			}
+			37%{
+				top: 2px;
+				left: 2px;
+			}
+			50%{
+				top: 5px;
+				left: 0px;
+			}
+			62%{
+				top: 2px;
+				left: -2px;
+			}
+			75%{
+				top: 0px;
+				left: -5px;
+			}
+			87%{
+				top: -2px;
+				left: -2px;
+			}
+			100%{
+				top: -5px;
+				left: 0px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<span class="btn">Hover</span>
+	</div>
+</body>
+</html>
